@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title></title>
+	    <meta charset="utf-8" />
+
+        <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+
+    </head>
+    <body ng-controller="indexController">
+
+        <div class="container">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="searchTerm">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="searchForMovie()">Go!</button>
+                </span>
+            </div><!-- /input-group -->
+
+            <div class="row">
+                <center>
+
+                    <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="movie in movies">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">{{movie.Title}}</div>
+                            <div class="panel-body">
+                                <img ng-src="movie.Poster"/>
+                                <small>Filmed in {{movie.Year}}</small>
+                                <a href="google.com">Click here to see this movie on IMDB.</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </center>
+            </div>
+        </div>
+    
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
